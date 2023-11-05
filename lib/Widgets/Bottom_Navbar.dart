@@ -21,6 +21,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: _currentIndex == 0 ? HomeScreen() : SearchScreen(),
       bottomNavigationBar: Container(
         width: 390,
