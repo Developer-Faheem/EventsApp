@@ -5,10 +5,22 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/constants.dart';
 
 class EventCard extends StatelessWidget {
+
+   final Axis scrollDirection;
+
+ 
+  const EventCard({super.key, required this.scrollDirection});
+
+
+
   @override
   Widget build(BuildContext context) {
+
+    double width=MediaQuery.of(context).size.width;
+    double height=MediaQuery.of(context).size.height;
+
     return ListView.builder(
-      scrollDirection: Axis.horizontal,
+      scrollDirection: scrollDirection,
       itemCount: 5, // Adjust the number of containers as needed
       itemBuilder: (BuildContext context, int index) {
         return Container(
@@ -16,14 +28,14 @@ class EventCard extends StatelessWidget {
               color: kcards, borderRadius: BorderRadius.circular(20)),
           width: 278,
           height: 264,
-          margin: const EdgeInsets.only(right: 20, top: 16),
+          margin: const EdgeInsets.only(right: 20, top: 8,bottom: 8),
           child:
               Column(
               crossAxisAlignment: CrossAxisAlignment.start, 
               children: [
             Container(
-              margin: const EdgeInsets.only(top: 12.5,  left: 8.5),
-              width: 253,
+              margin:  EdgeInsets.only(top: 12.5,  left:  width*0.001,right:width*0.0159,bottom: height*0.006 ),
+              width: width*0.86,
               height: 149,
               child: Image.asset(
                 'assets/pictures/cardsPicture.png', // Replace with your image asset path
@@ -32,7 +44,7 @@ class EventCard extends StatelessWidget {
             ),
 
             Padding(
-              padding: const EdgeInsets.only(left: 19),
+              padding:  EdgeInsets.only(left:  width*0.045,right: width*0.045 ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -46,7 +58,7 @@ class EventCard extends StatelessWidget {
                         ), ),
                           const SizedBox(height: 8,),
                Row(
-               
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                  children: [
                    Column(
                      children: [

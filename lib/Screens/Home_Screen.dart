@@ -71,10 +71,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: kSecondary,
                                   letterSpacing: -0.01,
                                   height: 0)),
-                          SizedBox(
+                          const SizedBox(
                             height:
                                 264, // Set the desired height of the horizontal list
-                            child: EventCard(),
+                            child: EventCard(scrollDirection:Axis.horizontal ,),
                           ),
                           const SizedBox(
                             height: 20,
@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           const SizedBox(
                             height:
                                 198, // Set the desired height of the horizontal list
-                            child: ClubCard(),
+                            child: ClubCard(scrollDirection: Axis.horizontal),
                           ),
                           const SizedBox(
                             height: 20,
@@ -101,10 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: kSecondary,
                                   letterSpacing: -0.01,
                                   height: 0)),
-                          SizedBox(
+                          const SizedBox(
                             height:
                                 264, // Set the desired height of the horizontal list
-                            child: EventCard(),
+                            child: EventCard(scrollDirection: Axis.horizontal,),
                           ),
                           const SizedBox(
                             height: 20,
@@ -116,10 +116,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: kSecondary,
                                   letterSpacing: -0.01,
                                   height: 0)),
-                          SizedBox(
+                          const SizedBox(
                             height:
                                 264, // Set the desired height of the horizontal list
-                            child: EventCard(),
+                            child: EventCard(scrollDirection:Axis.horizontal ,),
                           ),
                           const SizedBox(
                             height: 16,

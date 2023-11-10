@@ -4,28 +4,36 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/constants.dart';
 
 class ClubCard extends StatelessWidget {
-  const ClubCard({super.key});
+ final Axis scrollDirection;
+
+ 
+  const ClubCard({super.key, required this.scrollDirection});
 
   @override
   Widget build(BuildContext context) {
+
+     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
+
  return ListView.builder(
-      scrollDirection: Axis.horizontal,
+      scrollDirection:scrollDirection,
       itemCount: 5, // Adjust the number of containers as needed
       itemBuilder: (BuildContext context, int index) {
         return Container(
           decoration: BoxDecoration(
               color: kcards, borderRadius: BorderRadius.circular(20)),
-          width: 296,
-          height: 198,
-          margin: const EdgeInsets.only(right: 20, top: 16),
+           width: width*0.8,
+          // height: 198,
+          margin: const EdgeInsets.only(right: 20, top: 8,bottom: 8),
           child: 
           Stack(
             alignment: Alignment.topRight,
             children: [
               Container(
-                margin: const EdgeInsets.only(top:12,right: 13),
-                width: 273,
-                height: 167,
+               margin: const EdgeInsets.only(top:12,right: 13),
+              //   width: width*0.999,
+                // height: 167,
                 decoration: const BoxDecoration(
 
                 ),

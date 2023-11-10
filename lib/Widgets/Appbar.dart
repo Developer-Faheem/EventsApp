@@ -61,42 +61,46 @@ class AppBarContent extends StatelessWidget {
         SizedBox(
           height: height * 0.06,
         ),
-        Container(
-          height: 27,
-          decoration: const BoxDecoration(
-            border: Border(
-              left: BorderSide(
-                  color: Colors.white,
-                  width: 2.0), // Left border with color and width
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(top: 10, left: 10),
-            child: TextField(
-              cursorColor: Colors.white,
-              style: GoogleFonts.montserrat(
-                color: Colors.white,
-                fontSize: 14.0,
-                fontWeight: FontWeight.w700,
+       
+        Padding(
+          padding:  EdgeInsets.only(left:width*0.065),
+          child: Container(
+            height: 27,
+            decoration: const BoxDecoration(
+              border: Border(
+                left: BorderSide(
+                    color: Colors.white,
+                    width: 2.0), // Left border with color and width
               ),
-              decoration: InputDecoration(
-                hintText: 'Search...',
-                hintStyle: GoogleFonts.montserrat(
-                  color: kPrimarytext,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10, left: 10),
+              child: TextField(
+                cursorColor: Colors.white,
+                style: GoogleFonts.montserrat(
+                  color: Colors.white,
                   fontSize: 14.0,
                   fontWeight: FontWeight.w700,
                 ),
-                focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Colors
-                          .transparent
-                        ), // Transparent border for focus
-                ),
-                enabledBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Colors
-                          .transparent
-                          ), // Transparent border for enabled
+                decoration: InputDecoration(
+                  hintText: 'Search...',
+                  hintStyle: GoogleFonts.montserrat(
+                    color: kPrimarytext,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.w700,
+                  ),
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors
+                            .transparent
+                          ), // Transparent border for focus
+                  ),
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors
+                            .transparent
+                            ), // Transparent border for enabled
+                  ),
                 ),
               ),
             ),
