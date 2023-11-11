@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 0)),
                           const SizedBox(
                             height:
-                                198, // Set the desired height of the horizontal list
+                                199, // Set the desired height of the horizontal list
                             child: ClubCard(scrollDirection: Axis.horizontal),
                           ),
                           const SizedBox(

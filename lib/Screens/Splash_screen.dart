@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tejan/Screens/Event_Screen.dart';
 import 'package:tejan/Screens/User_screen.dart';
 import 'package:tejan/Widgets/Bottom_Navbar.dart';
 import 'package:tejan/constants.dart';
@@ -21,8 +22,9 @@ class _SplashScreenState extends State<SplashScreen> {
   Future _navigateToUserScreen() async {
     await Future.delayed(const Duration(milliseconds: 1500), () {});
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (context) => CustomBottomNavigationBar()));
+        MaterialPageRoute(builder: (context) => UserScreen()));
   }
+  //CustomBottomNavigationBar
 
   @override
   Widget build(BuildContext context) {
