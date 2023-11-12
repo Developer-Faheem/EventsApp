@@ -73,7 +73,7 @@ class EventScreen extends StatelessWidget {
                 ),
                 
                 child:  Padding(
-                  padding:  EdgeInsets.only(left: width * 0.049,top: height*0.04),
+                  padding:  EdgeInsets.only(left: width * 0.06,top: height*0.04),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -89,116 +89,121 @@ class EventScreen extends StatelessWidget {
                        
                       ),
                       SizedBox(height: height*0.025,),
-                      Container(
-                        width: 316,
-                        height: 131,
-                        decoration: BoxDecoration(
-                       //   color: Colors.transparent, // You can set a background color here if needed
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            color: const Color(0xff979797),
-                            width: 1,
+                      Row(
+                        children: [
+                              SizedBox(width: width*0.03,),
+                          Container(
+                            width: 316,
+                            height: 131,
+                            decoration: BoxDecoration(
+                           //   color: Colors.transparent, // You can set a background color here if needed
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: const Color(0xff979797),
+                                width: 1,
+                              ),
+                            ),
+                           child: Padding(
+                             padding: const EdgeInsets.all(14.0),
+                             child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 33,
+                                      height: 31,
+                                      decoration: BoxDecoration(
+                                        color: kCardButton,
+                                        borderRadius: BorderRadius.circular(5.5), // Half of the width and height for circular corners
+                                      ),
+                                      child: Center(
+                                        child: SvgPicture.asset(
+                                          'assets/svg/calendar.svg', // Replace with your SVG file path
+                                          width: 24, // Adjust the width of the SVG as needed
+                                          height: 24, // Adjust the height of the SVG as needed
+                                        ),
+                                      ),
+                                    ),
+                                     SizedBox(width: width*0.03,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                       Text(
+                                        'Fri, 26 Octuber 2023',
+                                          style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 12,
+                                            color: kSecondarytext,
+                                          letterSpacing: -0.041111111640930176,
+                                          height: 0
+                                          ),
+                                        
+                                        ), Text(
+                                        '11:00 PM',
+                                          style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            color: kSecondarytext,
+                                          letterSpacing: -0.041111111640930176,
+                                          height: 0
+                                          ),
+                                        ),
+                                    ],)
+                                  ],
+                                ),
+                                SizedBox(height: height*0.02,),
+                                Divider(height: 1,  color: const Color(0xff979797),),
+                                 SizedBox(height: height*0.02,),
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 33,
+                                      height: 31,
+                                      decoration: BoxDecoration(
+                                        color: kCardButton,
+                                        borderRadius: BorderRadius.circular(5.5), // Half of the width and height for circular corners
+                                      ),
+                                      child: Center(
+                                        child: SvgPicture.asset(
+                                          'assets/svg/location.svg', // Replace with your SVG file path
+                                          width: 24, // Adjust the width of the SVG as needed
+                                          height: 24, // Adjust the height of the SVG as needed
+                                        ),
+                                      ),
+                                    ),
+                                     SizedBox(width: width*0.03,),
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                       Text(
+                                        'Get Direction',
+                                          style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 12,
+                                            color: kSecondarytext,
+                                          letterSpacing: -0.041111111640930176,
+                                          height: 0
+                                          ),
+                                        
+                                        ), Text(
+                                        'Soubois',
+                                          style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            color: kSecondarytext,
+                                          letterSpacing: -0.041111111640930176,
+                                          height: 0
+                                          ),
+                                        ),
+                                    ],)
+                                  ],
+                                ),
+                              
+                              ],
+                             ),
+                           ),
                           ),
-                        ),
-                       child: Padding(
-                         padding: const EdgeInsets.all(14.0),
-                         child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-                                  width: 33,
-                                  height: 31,
-                                  decoration: BoxDecoration(
-                                    color: kCardButton,
-                                    borderRadius: BorderRadius.circular(5.5), // Half of the width and height for circular corners
-                                  ),
-                                  child: Center(
-                                    child: SvgPicture.asset(
-                                      'assets/svg/calendar.svg', // Replace with your SVG file path
-                                      width: 24, // Adjust the width of the SVG as needed
-                                      height: 24, // Adjust the height of the SVG as needed
-                                    ),
-                                  ),
-                                ),
-                                 SizedBox(width: width*0.03,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                   Text(
-                                    'Fri, 26 Octuber 2023',
-                                      style: GoogleFonts.montserrat(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 12,
-                                        color: kSecondarytext,
-                                      letterSpacing: -0.041111111640930176,
-                                      height: 0
-                                      ),
-                                    
-                                    ), Text(
-                                    '11:00 PM',
-                                      style: GoogleFonts.montserrat(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                        color: kSecondarytext,
-                                      letterSpacing: -0.041111111640930176,
-                                      height: 0
-                                      ),
-                                    ),
-                                ],)
-                              ],
-                            ),
-                            SizedBox(height: height*0.02,),
-                            Divider(height: 1,  color: const Color(0xff979797),),
-                             SizedBox(height: height*0.02,),
-                            Row(
-                              children: [
-                                Container(
-                                  width: 33,
-                                  height: 31,
-                                  decoration: BoxDecoration(
-                                    color: kCardButton,
-                                    borderRadius: BorderRadius.circular(5.5), // Half of the width and height for circular corners
-                                  ),
-                                  child: Center(
-                                    child: SvgPicture.asset(
-                                      'assets/svg/location.svg', // Replace with your SVG file path
-                                      width: 24, // Adjust the width of the SVG as needed
-                                      height: 24, // Adjust the height of the SVG as needed
-                                    ),
-                                  ),
-                                ),
-                                 SizedBox(width: width*0.03,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                   Text(
-                                    'Get Direction',
-                                      style: GoogleFonts.montserrat(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 12,
-                                        color: kSecondarytext,
-                                      letterSpacing: -0.041111111640930176,
-                                      height: 0
-                                      ),
-                                    
-                                    ), Text(
-                                    'Soubois',
-                                      style: GoogleFonts.montserrat(
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                        color: kSecondarytext,
-                                      letterSpacing: -0.041111111640930176,
-                                      height: 0
-                                      ),
-                                    ),
-                                ],)
-                              ],
-                            ),
-                          
-                          ],
-                         ),
-                       ),
+                        ],
                       ),
                      SizedBox(height: height*0.025,),
                     Row(children: [
