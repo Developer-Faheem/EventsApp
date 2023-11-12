@@ -106,7 +106,7 @@ class EventCard extends StatelessWidget {
                          )         
                        ],
                      ),
-                       const SizedBox(width: 74.5,),
+                      // const SizedBox(width: 74.5,),
                       Container(
                         width: 83,
                         height: 38,

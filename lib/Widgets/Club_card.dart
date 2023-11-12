@@ -41,7 +41,7 @@ class ClubCard extends StatelessWidget {
                   height: double.infinity,
                   fit: BoxFit.cover,),
                 ),
-        
+                index==0?
                 Positioned(
                   top: 35,
                   right: 40,
@@ -61,7 +61,7 @@ class ClubCard extends StatelessWidget {
                                       )
                     ),
                   ),
-                ),
+                ):Container(),
         
                 Positioned(
                   top: 120,

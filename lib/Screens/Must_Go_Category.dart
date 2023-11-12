@@ -39,44 +39,48 @@ class MustGoScreen  extends StatelessWidget {
                   right: width * 0.062,
                 ),
                 child: Center(
-                  child: Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.pop(context);
-                        },
-                        child: SvgPicture.asset(
-                          'assets/svg/back.svg',
-                          width: 8.45,
-                          height: 16.9,
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      Text(
-                        'Back',
-                        style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 12,
-                          color: kSecondary,
-                          letterSpacing: -0.01,
-                          height: 0,
-                        ),
-                      ),
-                      Spacer(), // Add Spacer to fill the available space
-                      Text(
-                        'Must Go Clubs',
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 14,
-                          color: kPrimarytext,
-                          letterSpacing: -0.01,
-                          height: 0,
-                        ),
-                      ),
-                      Spacer(), // Add Spacer to fill the available space
-                    ],
-                  ),
+                  child:Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
+    InkWell(
+      onTap: (){
+        Navigator.pop(context);
+      },
+      child: Row(
+        children: [
+          SvgPicture.asset(
+            'assets/svg/back.svg',
+            width: 8.45,
+            height: 16.9,
+          ),
+          SizedBox(width: 10),
+          Text(
+            'Back',
+            style: GoogleFonts.montserrat(
+              fontWeight: FontWeight.w600,
+              fontSize: 12,
+              color: kSecondary,
+              letterSpacing: -0.01,
+              height: 0,
+            ),
+          ),
+        ],
+      ),
+    ),
+    Text(
+      'Must Go Clubs',
+      textAlign: TextAlign.center,
+      style: GoogleFonts.montserrat(
+        fontWeight: FontWeight.w700,
+        fontSize: 14,
+        color: kPrimarytext,
+        letterSpacing: -0.01,
+        height: 0,
+      ),
+    ),
+    SizedBox(width: 57), // Adjust this spacing as needed
+  ],
+)
                 ),
               ),
             ),
