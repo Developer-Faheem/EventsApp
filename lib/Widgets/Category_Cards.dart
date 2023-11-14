@@ -13,7 +13,7 @@ class CategoryCards extends StatelessWidget {
   
    final List<Map<String, String>> categoryList = [
     {
-      'url': 'assets/svg/houseIcon.svg',
+      'url': 'assets/svg/houseCategory.svg',
       'name': 'House',
     },
     {

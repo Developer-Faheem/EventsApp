@@ -28,23 +28,42 @@ class ClubCard extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
                 color: kcards, borderRadius: BorderRadius.circular(20)),
-             width: width*0.8,
+             width: width*0.83,
              height: 198,
             margin: const EdgeInsets.only(right: 20, top: 8,bottom: 8),
             child: 
             Stack(
               alignment: Alignment.topRight,
               children: [
-                Padding(
-                  padding:  EdgeInsets.only(right: width*0.018,top:height*0.017,bottom:height*0.017 ),
-                  child: Image.asset('assets/pictures/clubs.png',width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,),
+                        Container(
+                  margin: EdgeInsets.only(
+                    top: height * 0.017,
+                    right: width * 0.022,
+                    bottom: height * 0.017,
+                  ),
+                  width: width * 0.88,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.asset(
+                      'assets/pictures/clubs.png', // Replace with your image asset path
+                      fit: BoxFit.cover, // Adjust the fit as needed
+                    ),
+                  ),
                 ),
+
+
+
+
+                // Padding(
+                //   padding:  EdgeInsets.only(right: width*0.018,top:height*0.017,bottom:height*0.017 ),
+                //   child: Image.asset('assets/pictures/clubs.png',width: double.infinity,
+                //   height: double.infinity,
+                //   fit: BoxFit.cover,),
+                // ),
                 index==0?
                 Positioned(
-                  top: 35,
-                  right: 40,
+                  top: 26,
+                  right: 28,
                   child: Container(
                     width: 108,
                     height: 19,

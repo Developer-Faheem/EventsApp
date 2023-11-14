@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 letterSpacing: -0.01,
                                 height: 0),
                           ),
-                           SizedBox(height: height*0.015,),
+                           SizedBox(height: height*0.017,),
                          
                           SizedBox(
                             height:

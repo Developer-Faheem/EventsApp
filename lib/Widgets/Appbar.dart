@@ -25,7 +25,7 @@ class AppBarContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SvgPicture.asset(
-              'assets/svg/notification-bell.svg',
+              'assets/svg/navbarIcon.svg',
               width: 18, // Specify the desired width
               height: 19.06, // Specify the desired height
             ),

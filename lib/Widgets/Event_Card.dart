@@ -70,7 +70,7 @@ class EventCard extends StatelessWidget {
                          Row(
                            children: [
                              SvgPicture.asset(
-                                      'assets/svg/Path.svg',
+                                      'assets/svg/locationIcon.svg',
                                       width: 13, // Specify the desired width
                                       height: 19, // Specify the desired height
                                     ),
