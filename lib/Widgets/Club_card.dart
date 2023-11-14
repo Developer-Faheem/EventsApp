@@ -83,8 +83,8 @@ class ClubCard extends StatelessWidget {
                 ):Container(),
         
                 Positioned(
-                  top: 120,
-                  left: 40,
+                  bottom: 30,
+                  left: 30,
                   child: Row(
                     children: [
                       Container(
