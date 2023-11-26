@@ -5,11 +5,11 @@ import 'package:tejan/Screens/Event_Screen.dart';
 import 'package:tejan/constants.dart';
 
 class EventCard extends StatelessWidget {
-  // final Axis scrollDirection;
-  // final String selectedCategory;
+  // Map<String,dynamic> data;
 
-  const EventCard({
+  EventCard({
     super.key,
+    // required this.data
     //   required this.scrollDirection,
   });
 

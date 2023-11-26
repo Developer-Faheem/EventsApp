@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,11 +15,11 @@ class HouseScreen extends StatelessWidget {
   final List<Map<String, String>> categoryList = [
     {
       'url': 'assets/svg/todayHits.svg',
-      'name': 'Today\'s Hits',
+      'name': 'Today\'s hits',
     },
     {
       'url': 'assets/svg/houseCategory.svg',
-      'name': 'House/Tech',
+      'name': 'House/tech',
     },
     {
       'url': 'assets/svg/edm.svg',
@@ -30,19 +31,19 @@ class HouseScreen extends StatelessWidget {
     },
     {
       'url': 'assets/svg/latin.svg',
-      'name': 'Latin',
+      'name': 'latin',
     },
     {
       'url': 'assets/svg/speakeasy.svg',
-      'name': 'Speakeasy',
+      'name': 'speakeasy',
     },
     {
       'url': 'assets/svg/fancyBars.svg',
-      'name': 'Bars',
+      'name': 'bars',
     },
     {
       'url': 'assets/svg/rap.svg',
-      'name': 'Rap FR',
+      'name': 'Rap fit',
     },
     {
       'url': 'assets/svg/karoake.svg',
@@ -131,23 +132,48 @@ class HouseScreen extends StatelessWidget {
               ),
             ),
           ),
-          body: Padding(
-            padding: EdgeInsets.only(
-              left: width * 0.049,
-            ),
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: 5, // Adjust the number of containers as needed
-              itemBuilder: (BuildContext context, int index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => EventScreen()));
+          body: StreamBuilder<QuerySnapshot>(
+            stream: FirebaseFirestore.instance
+                .collection('events')
+                .where('eventCategory', isEqualTo: selectedCategory)
+                .snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(child: CircularProgressIndicator());
+              }
+
+              if (snapshot.hasError) {
+                return Center(child: Text('Error: ${snapshot.error}'));
+              }
+              // If the data has been loaded successfully
+              var events = snapshot.data!.docs;
+              print(events.length);
+
+              return Padding(
+                padding: EdgeInsets.only(left: width * 0.049),
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: events.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    var eventData =
+                        events[index].data() as Map<String, dynamic>;
+
+                    // Pass eventData to your EventCard widget
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EventScreen(),
+                          ),
+                        );
+                      },
+                      child: EventCard(),
+                    );
                   },
-                  child: EventCard(),
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
         ),
       ),
