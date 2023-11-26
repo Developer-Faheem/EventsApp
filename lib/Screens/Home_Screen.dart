@@ -6,6 +6,8 @@ import 'package:tejan/FirebaseServices/Fetch_Events.dart';
 import 'package:tejan/FirebaseServices/Fetch_Venues.dart';
 import 'package:tejan/Screens/Event_Screen.dart';
 import 'package:tejan/Screens/Category_Screen.dart';
+import 'package:tejan/Screens/Homescreen_Categories.dart';
+import 'package:tejan/Screens/MustGo_Clubs.dart';
 import 'package:tejan/Screens/Venu_Screen.dart';
 import 'package:tejan/Widgets/Appbar.dart';
 import 'package:tejan/Widgets/Category_Cards.dart';
@@ -93,13 +95,43 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Trending Events this Week',
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: kSecondary,
-                                    letterSpacing: -0.01,
-                                    height: 0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Trending Events this Week',
+                                    style: GoogleFonts.montserrat(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 15,
+                                        color: kSecondary,
+                                        letterSpacing: -0.01,
+                                        height: 0)),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(right: width * 0.049),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomeScreenCategories(
+                                            title: 'Trending Events this Week',
+                                            Category: 'trending',
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Text('See all',
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            color: Color(0xff9D8BBA),
+                                            letterSpacing: -0.01,
+                                            height: 0)),
+                                  ),
+                                ),
+                              ],
+                            ),
                             SizedBox(
                               height: height * 0.015,
                             ),
@@ -111,13 +143,39 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height: height * 0.04,
                             ),
-                            Text('Must Go Clubs in Montreal',
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: kSecondary,
-                                    letterSpacing: -0.01,
-                                    height: 0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Must Go Clubs in Montreal',
+                                    style: GoogleFonts.montserrat(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 15,
+                                        color: kSecondary,
+                                        letterSpacing: -0.01,
+                                        height: 0)),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(right: width * 0.049),
+                                  child: InkWell(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MustGoClubs()),
+                                      );
+                                    },
+                                    child: Text('See all',
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            color: Color(0xff9D8BBA),
+                                            letterSpacing: -0.01,
+                                            height: 0)),
+                                  ),
+                                ),
+                              ],
+                            ),
                             SizedBox(
                               height: height * 0.015,
                             ),
@@ -133,13 +191,43 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height: height * 0.04,
                             ),
-                            Text('Upcoming Events',
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: kSecondary,
-                                    letterSpacing: -0.01,
-                                    height: 0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Upcoming Events',
+                                    style: GoogleFonts.montserrat(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 15,
+                                        color: kSecondary,
+                                        letterSpacing: -0.01,
+                                        height: 0)),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(right: width * 0.049),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomeScreenCategories(
+                                            title: 'Upcoming Events',
+                                            Category: 'upComing',
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Text('See all',
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            color: Color(0xff9D8BBA),
+                                            letterSpacing: -0.01,
+                                            height: 0)),
+                                  ),
+                                ),
+                              ],
+                            ),
                             SizedBox(
                               height: height * 0.015,
                             ),
@@ -150,13 +238,43 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height: height * 0.04,
                             ),
-                            Text('Events Near Me',
-                                style: GoogleFonts.montserrat(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 15,
-                                    color: kSecondary,
-                                    letterSpacing: -0.01,
-                                    height: 0)),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Events Near Me',
+                                    style: GoogleFonts.montserrat(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 15,
+                                        color: kSecondary,
+                                        letterSpacing: -0.01,
+                                        height: 0)),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(right: width * 0.049),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              HomeScreenCategories(
+                                            title: 'Events Near Me',
+                                            Category: 'nearMe',
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Text('See all',
+                                        style: GoogleFonts.montserrat(
+                                            fontWeight: FontWeight.w500,
+                                            fontSize: 12,
+                                            color: Color(0xff9D8BBA),
+                                            letterSpacing: -0.01,
+                                            height: 0)),
+                                  ),
+                                ),
+                              ],
+                            ),
                             SizedBox(
                               height: height * 0.015,
                             ),

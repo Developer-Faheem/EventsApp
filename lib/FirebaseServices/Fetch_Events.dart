@@ -30,7 +30,7 @@ class FetchingEvents extends StatelessWidget {
         if (events.isEmpty) {
           return Center(
             child: Text(
-              'There is no featured event',
+              'There is no  event',
               style: GoogleFonts.montserrat(
                 fontWeight: FontWeight.w500,
                 fontSize: 13,
