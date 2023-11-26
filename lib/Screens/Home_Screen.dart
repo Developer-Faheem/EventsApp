@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/FirebaseServices/Fetch_Events.dart';
+import 'package:tejan/FirebaseServices/Fetch_Venues.dart';
 import 'package:tejan/Screens/Event_Screen.dart';
 import 'package:tejan/Screens/Category_Screen.dart';
+import 'package:tejan/Screens/Venu_Screen.dart';
 import 'package:tejan/Widgets/Appbar.dart';
 import 'package:tejan/Widgets/Category_Cards.dart';
 import 'package:tejan/Widgets/Club_card.dart';
@@ -119,10 +121,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height: height * 0.015,
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height:
                                   199, // Set the desired height of the horizontal list
-                              child: ClubCard(scrollDirection: Axis.horizontal),
+                              child:
+                                  //ClubCard(scrollDirection: Axis.horizontal),
+                                  FetchingVenues(
+                                scrollDirection: Axis.horizontal,
+                              ),
                             ),
                             SizedBox(
                               height: height * 0.04,

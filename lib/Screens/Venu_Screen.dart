@@ -5,7 +5,8 @@ import 'package:tejan/Widgets/Main_button.dart';
 import 'package:tejan/constants.dart';
 
 class VenueScreen extends StatelessWidget {
-  const VenueScreen({Key? key});
+  Map<String, dynamic> data;
+  VenueScreen({Key? key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -73,13 +74,15 @@ class VenueScreen extends StatelessWidget {
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(5))),
                 child: Padding(
-                  padding:
-                      EdgeInsets.only(left: width * 0.06, top: height * 0.04),
+                  padding: EdgeInsets.only(
+                      left: width * 0.06,
+                      top: height * 0.04,
+                      right: width * 0.06),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Greenwood Summerhouse',
+                          data['venueName'],
                           style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.w800,
                               fontSize: 15,
@@ -149,7 +152,7 @@ class VenueScreen extends StatelessWidget {
                                                   height: 0),
                                             ),
                                             Text(
-                                              '(438) 873-9663',
+                                              data['phoneNumber'],
                                               style: GoogleFonts.montserrat(
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 12,
@@ -210,7 +213,7 @@ class VenueScreen extends StatelessWidget {
                                                   height: 0),
                                             ),
                                             Text(
-                                              'Greenwood Summerhouse',
+                                              data['venueName'],
                                               style: GoogleFonts.montserrat(
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 12,
@@ -238,10 +241,10 @@ class VenueScreen extends StatelessWidget {
                               width: 37,
                               height: 37,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15.5),
-                                image: const DecorationImage(
-                                  image: AssetImage(
-                                      'assets/pictures/avatar2.png'), // Replace with your image path
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: NetworkImage(data[
+                                      'createdByImageUrl']), // Replace with your image path
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -262,7 +265,7 @@ class VenueScreen extends StatelessWidget {
                                       height: 0),
                                 ),
                                 Text(
-                                  'Greenwood',
+                                  data['venueCreatedBy'],
                                   style: GoogleFonts.montserrat(
                                       fontWeight: FontWeight.w500,
                                       fontSize: 12,
@@ -290,7 +293,7 @@ class VenueScreen extends StatelessWidget {
                           height: height * 0.012,
                         ),
                         Text(
-                          "Nestled in the heart of Montréal, the Greenwood Summerhouse restaurant is a hidden gem.Its serene ambiance and lush surroundings create an enchanting dining experience.Upon entering, you’re greeted by a symphony of colors and fragrances.Read More",
+                          data['venueDetails'],
                           style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.w600,
                               fontSize: 12,

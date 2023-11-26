@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tejan/FirebaseServices/Fetch_Venues.dart';
 import 'package:tejan/Widgets/Appbar.dart';
 import 'package:tejan/Widgets/Club_card.dart';
 import 'package:tejan/constants.dart';
@@ -47,7 +48,7 @@ class SearchScreen extends StatelessWidget {
             padding: EdgeInsets.only(
               left: width * 0.049,
             ),
-            child: ClubCard(scrollDirection: Axis.vertical),
+            child: FetchingVenues(scrollDirection: Axis.vertical),
           ),
         ),
       ),

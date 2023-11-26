@@ -76,8 +76,10 @@ class EventScreen extends StatelessWidget {
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(5))),
                   child: Padding(
-                    padding:
-                        EdgeInsets.only(left: width * 0.06, top: height * 0.04),
+                    padding: EdgeInsets.only(
+                        left: width * 0.06,
+                        top: height * 0.04,
+                        right: width * 0.06),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
