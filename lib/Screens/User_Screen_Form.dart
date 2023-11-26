@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tejan/Widgets/Bottom_Navbar.dart';
 import 'package:tejan/Widgets/Main_button.dart';
 import 'package:tejan/constants.dart';
 
@@ -72,7 +73,20 @@ class UserScreenForm extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.3,
                   ),
                   Row(
-                    children: [MainButton(buttonText: 'Skip')],
+                    children: [
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        CustomBottomNavigationBar()));
+                          },
+                          child: MainButton(
+                            buttonText: 'Skip',
+                            buttonColor: kSecondary,
+                          ))
+                    ],
                   )
                 ],
               ),

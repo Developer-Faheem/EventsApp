@@ -6,35 +6,28 @@ import 'package:tejan/constants.dart';
 
 class MainButton extends StatelessWidget {
   String buttonText;
-  MainButton({super.key, required this.buttonText});
+  Color buttonColor;
+  MainButton({super.key, required this.buttonText, required this.buttonColor});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (){
-        if(buttonText=='Get Started'){
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const UserScreenForm()));
-        }else if(buttonText=='Skip'){
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> CustomBottomNavigationBar()));
-        }
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          color: kSecondary,
-          borderRadius: BorderRadius.circular(15),
-        ),
-        width: 288,
-        height: 55,
-        child: Center(
-            child: Text(
+    return Container(
+      decoration: BoxDecoration(
+        color: buttonColor,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      width: 288,
+      height: 55,
+      child: Center(
+        child: Text(
           buttonText,
           style: GoogleFonts.montserrat(
-              fontWeight: FontWeight.w700,
-              fontSize: 19,
-              color: kPrimarytext,
-              letterSpacing: -0.02,
-              ),
-        )),
+            fontWeight: FontWeight.w700,
+            fontSize: 19,
+            color: kPrimarytext,
+            letterSpacing: -0.02,
+          ),
+        ),
       ),
     );
   }

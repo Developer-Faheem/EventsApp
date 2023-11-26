@@ -5,7 +5,8 @@ import 'package:tejan/Widgets/Main_button.dart';
 import 'package:tejan/constants.dart';
 
 class EventScreen extends StatelessWidget {
-  const EventScreen({Key? key});
+  Map<String, dynamic> data;
+  EventScreen({Key? key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +82,7 @@ class EventScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Haloween CandyLand Party',
+                            data['eventName'],
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w800,
                                 fontSize: 15,
@@ -140,7 +141,7 @@ class EventScreen extends StatelessWidget {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Fri, 26 Octuber 2023',
+                                                data['eventDate'],
                                                 style: GoogleFonts.montserrat(
                                                     fontWeight: FontWeight.w700,
                                                     fontSize: 12,
@@ -150,7 +151,7 @@ class EventScreen extends StatelessWidget {
                                                     height: 0),
                                               ),
                                               Text(
-                                                '11:00 PM',
+                                                data['eventTime'],
                                                 style: GoogleFonts.montserrat(
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 12,
@@ -211,7 +212,7 @@ class EventScreen extends StatelessWidget {
                                                     height: 0),
                                               ),
                                               Text(
-                                                'Soubois',
+                                                data['venueName'],
                                                 style: GoogleFonts.montserrat(
                                                     fontWeight: FontWeight.w500,
                                                     fontSize: 12,
@@ -239,10 +240,10 @@ class EventScreen extends StatelessWidget {
                                 width: 37,
                                 height: 37,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15.5),
-                                  image: const DecorationImage(
-                                    image: AssetImage(
-                                        'assets/pictures/avatar1.png'), // Replace with your image path
+                                  shape: BoxShape.circle,
+                                  image: DecorationImage(
+                                    image: NetworkImage(data[
+                                        'venueImageUrl']), // Replace with your image path
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -263,7 +264,7 @@ class EventScreen extends StatelessWidget {
                                         height: 0),
                                   ),
                                   Text(
-                                    'Soubois',
+                                    data['eventCreatedBy'],
                                     style: GoogleFonts.montserrat(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 12,
@@ -291,7 +292,7 @@ class EventScreen extends StatelessWidget {
                             height: height * 0.012,
                           ),
                           Text(
-                            "Step into a sweet and spooky world at our Candy Land Halloween Party! Join us for a night of deliciously frightful fun, where the land of candy comes to life. Explore candy cane forests, licorice…Dress up as your favorite candy or a Halloween Read More",
+                            data['eventDetails'],
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 12,
@@ -305,7 +306,15 @@ class EventScreen extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(),
-                                MainButton(buttonText: 'Join Guesslist'),
+                                data['eventRegistrations']
+                                    ? MainButton(
+                                        buttonText: 'Join Guesslist',
+                                        buttonColor: kSecondary,
+                                      )
+                                    : MainButton(
+                                        buttonText: 'Guesslist is full ;(',
+                                        buttonColor: Color(0xff8E8E8E),
+                                      ),
                                 Text(
                                   'Or',
                                   style: GoogleFonts.montserrat(

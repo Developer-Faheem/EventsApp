@@ -5,13 +5,9 @@ import 'package:tejan/Screens/Event_Screen.dart';
 import 'package:tejan/constants.dart';
 
 class EventCard extends StatelessWidget {
-  // Map<String,dynamic> data;
+  Map<String, dynamic> data;
 
-  EventCard({
-    super.key,
-    // required this.data
-    //   required this.scrollDirection,
-  });
+  EventCard({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +23,23 @@ class EventCard extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
           margin: EdgeInsets.only(
-              top: 12.5,
-              left: width * 0.001,
-              right: width * 0.0159,
-              bottom: height * 0.006),
+            top: 12.5,
+            left: width * 0.038,
+            right: width * 0.038,
+            bottom: height * 0.006,
+          ),
           width: width * 0.86,
           height: 149,
-          child: Image.asset(
-            'assets/pictures/cardsPicture.png', // Replace with your image asset path
-            fit: BoxFit.cover, // Adjust the fit as needed
+          decoration: BoxDecoration(
+            borderRadius:
+                BorderRadius.circular(10.0), // Adjust the radius as needed
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10.0), // Same radius as above
+            child: Image.network(
+              data['eventImageUrl'], // Replace with your image URL
+              fit: BoxFit.cover, // Adjust the fit as needed
+            ),
           ),
         ),
         Padding(
@@ -44,7 +48,7 @@ class EventCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Haloween CandyLand Party',
+                data['eventName'],
                 style: GoogleFonts.montserrat(
                     fontWeight: FontWeight.w700,
                     fontSize: 15,
@@ -71,13 +75,16 @@ class EventCard extends StatelessWidget {
                             width: 8,
                           ),
                           Text(
-                            'Soubois',
+                            data['venueName'],
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 12,
                                 color: kSecondarytext,
                                 letterSpacing: -0.01,
                                 height: 0),
+                          ),
+                          const SizedBox(
+                            width: 21,
                           ),
                         ],
                       ),
@@ -95,7 +102,7 @@ class EventCard extends StatelessWidget {
                             width: 8,
                           ),
                           Text(
-                            '4.7 Stars',
+                            '${data['eventRatings']} Stars',
                             style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 12,
@@ -108,20 +115,32 @@ class EventCard extends StatelessWidget {
                     ],
                   ),
                   // const SizedBox(width: 74.5,),
-                  Container(
-                    width: 83,
-                    height: 38,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: kCardButton),
-                    child: Center(
-                      child: Text('Join\nNow',
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12,
-                              color: kPrimarytext,
-                              letterSpacing: -0.01,
-                              height: 0)),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EventScreen(
+                            data: data,
+                          ),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      width: 83,
+                      height: 38,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: kCardButton),
+                      child: Center(
+                        child: Text('Join\nNow',
+                            style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 12,
+                                color: kPrimarytext,
+                                letterSpacing: -0.01,
+                                height: 0)),
+                      ),
                     ),
                   ),
                 ],

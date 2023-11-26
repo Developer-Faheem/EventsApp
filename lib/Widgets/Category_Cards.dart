@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tejan/Screens/House_category_Screen.dart';
-import 'package:tejan/Screens/Must_Go_Category.dart';
-import 'package:tejan/Screens/Trending_Event_category.dart';
+import 'package:tejan/Screens/Category_Screen.dart';
 import 'package:tejan/constants.dart';
 
 class CategoryCards extends StatelessWidget {

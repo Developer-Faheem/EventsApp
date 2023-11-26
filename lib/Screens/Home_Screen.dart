@@ -1,10 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tejan/FirebaseServices/Fetch_Events.dart';
 import 'package:tejan/Screens/Event_Screen.dart';
-import 'package:tejan/Screens/House_category_Screen.dart';
-import 'package:tejan/Screens/Must_Go_Category.dart';
-import 'package:tejan/Screens/Trending_Event_category.dart';
+import 'package:tejan/Screens/Category_Screen.dart';
 import 'package:tejan/Widgets/Appbar.dart';
 import 'package:tejan/Widgets/Category_Cards.dart';
 import 'package:tejan/Widgets/Club_card.dart';
@@ -104,23 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height:
                                   264, // Set the desired height of the horizontal list
-                              child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount:
-                                    5, // Adjust the number of containers as needed
-                                itemBuilder: (BuildContext context, int index) {
-                                  return InkWell(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  EventScreen()));
-                                    },
-                                    child: EventCard(),
-                                  );
-                                },
-                              ),
+                              child: FetchingEvents(),
                             ),
                             SizedBox(
                               height: height * 0.04,
@@ -143,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height: height * 0.04,
                             ),
-                            Text('[Category]',
+                            Text('Upcoming Events',
                                 style: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 15,
@@ -154,30 +138,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: height * 0.015,
                             ),
                             SizedBox(
-                              height:
-                                  264, // Set the desired height of the horizontal list
-                              child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount:
-                                    5, // Adjust the number of containers as needed
-                                itemBuilder: (BuildContext context, int index) {
-                                  return InkWell(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  EventScreen()));
-                                    },
-                                    child: EventCard(),
-                                  );
-                                },
-                              ),
-                            ),
+                                height:
+                                    264, // Set the desired height of the horizontal list
+                                child: FetchingEvents()),
                             SizedBox(
                               height: height * 0.04,
                             ),
-                            Text('[Category]',
+                            Text('Events Near Me',
                                 style: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 15,
@@ -190,23 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height:
                                   264, // Set the desired height of the horizontal list
-                              child: ListView.builder(
-                                scrollDirection: Axis.horizontal,
-                                itemCount:
-                                    5, // Adjust the number of containers as needed
-                                itemBuilder: (BuildContext context, int index) {
-                                  return InkWell(
-                                    onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  EventScreen()));
-                                    },
-                                    child: EventCard(),
-                                  );
-                                },
-                              ),
+                              child: FetchingEvents(),
                             ),
                             SizedBox(
                               height: height * 0.04,
