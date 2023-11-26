@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "410004866265",
+    "project_id": "tejen-admin-app",
+    "storage_bucket": "tejen-admin-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410004866265:android:cde060f7ed5ea09448aac8",
+        "android_client_info": {
+          "package_name": "com.example.admin_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM6D7QI2C-KHKx-Sorwc1a0DDOoNIYTPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410004866265:android:6f40a8b4b9451ae548aac8",
+        "android_client_info": {
+          "package_name": "com.example.tejan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM6D7QI2C-KHKx-Sorwc1a0DDOoNIYTPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

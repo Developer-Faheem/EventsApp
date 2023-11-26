@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:tejan/Screens/Splash_screen.dart';
+import 'package:tejan/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,11 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-      
-   //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:const SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }
