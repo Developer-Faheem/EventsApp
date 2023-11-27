@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tejan/Screens/Venu_Screen.dart';
 import 'package:tejan/constants.dart';
 
 class ClubCard extends StatelessWidget {

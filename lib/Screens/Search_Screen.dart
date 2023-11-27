@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tejan/FirebaseServices/Fetch_Venues.dart';
 import 'package:tejan/Widgets/Appbar.dart';
-import 'package:tejan/Widgets/Club_card.dart';
 import 'package:tejan/constants.dart';
 
 class SearchScreen extends StatelessWidget {

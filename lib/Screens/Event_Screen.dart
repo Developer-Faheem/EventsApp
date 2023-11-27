@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/Widgets/Main_button.dart';
 import 'package:tejan/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class EventScreen extends StatelessWidget {
   Map<String, dynamic> data;
@@ -199,31 +202,42 @@ class EventScreen extends StatelessWidget {
                                           SizedBox(
                                             width: width * 0.03,
                                           ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Get Direction',
-                                                style: GoogleFonts.montserrat(
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 12,
-                                                    color: kSecondarytext,
-                                                    letterSpacing:
-                                                        -0.041111111640930176,
-                                                    height: 0),
-                                              ),
-                                              Text(
-                                                data['venueName'],
-                                                style: GoogleFonts.montserrat(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 12,
-                                                    color: kSecondarytext,
-                                                    letterSpacing:
-                                                        -0.041111111640930176,
-                                                    height: 0),
-                                              ),
-                                            ],
+                                          GestureDetector(
+                                            onTap: () {
+                                              String link =
+                                                  data['eventDirections'];
+                                              launchUrl(Uri.parse(link),
+                                                  mode: LaunchMode
+                                                      .inAppBrowserView);
+                                            },
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Get Direction',
+                                                  style: GoogleFonts.montserrat(
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 12,
+                                                      color: kSecondarytext,
+                                                      letterSpacing:
+                                                          -0.041111111640930176,
+                                                      height: 0),
+                                                ),
+                                                Text(
+                                                  data['venueName'],
+                                                  style: GoogleFonts.montserrat(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12,
+                                                      color: kSecondarytext,
+                                                      letterSpacing:
+                                                          -0.041111111640930176,
+                                                      height: 0),
+                                                ),
+                                              ],
+                                            ),
                                           )
                                         ],
                                       ),
@@ -309,9 +323,17 @@ class EventScreen extends StatelessWidget {
                               children: [
                                 Container(),
                                 data['eventRegistrations']
-                                    ? MainButton(
-                                        buttonText: 'Join Guesslist',
-                                        buttonColor: kSecondary,
+                                    ? GestureDetector(
+                                        onTap: () {
+                                          String link = data['joinEventUrl'];
+                                          launchUrl(Uri.parse(link),
+                                              mode:
+                                                  LaunchMode.inAppBrowserView);
+                                        },
+                                        child: MainButton(
+                                          buttonText: 'Join Guesslist',
+                                          buttonColor: kSecondary,
+                                        ),
                                       )
                                     : MainButton(
                                         buttonText: 'Guesslist is full ;(',
@@ -326,14 +348,21 @@ class EventScreen extends StatelessWidget {
                                       letterSpacing: -0.041111111640930176,
                                       height: 0),
                                 ),
-                                Text(
-                                  'Buy Tickets Here',
-                                  style: GoogleFonts.montserrat(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 12,
-                                      color: kSecondary,
-                                      letterSpacing: -0.041111111640930176,
-                                      height: 0),
+                                GestureDetector(
+                                  onTap: () {
+                                    String link = data['buyTicketUrl'];
+                                    launchUrl(Uri.parse(link),
+                                        mode: LaunchMode.inAppBrowserView);
+                                  },
+                                  child: Text(
+                                    'Buy Tickets Here',
+                                    style: GoogleFonts.montserrat(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 12,
+                                        color: kSecondary,
+                                        letterSpacing: -0.041111111640930176,
+                                        height: 0),
+                                  ),
                                 ),
                               ],
                             ),

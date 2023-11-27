@@ -1,18 +1,12 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/FirebaseServices/Fetch_Events.dart';
 import 'package:tejan/FirebaseServices/Fetch_Venues.dart';
-import 'package:tejan/Screens/Event_Screen.dart';
 import 'package:tejan/Screens/Category_Screen.dart';
 import 'package:tejan/Screens/Homescreen_Categories.dart';
 import 'package:tejan/Screens/MustGo_Clubs.dart';
-import 'package:tejan/Screens/Venu_Screen.dart';
 import 'package:tejan/Widgets/Appbar.dart';
 import 'package:tejan/Widgets/Category_Cards.dart';
-import 'package:tejan/Widgets/Club_card.dart';
-import 'package:tejan/Widgets/Event_Card.dart';
 import 'package:tejan/constants.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/Widgets/Main_button.dart';
 import 'package:tejan/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class VenueScreen extends StatelessWidget {
   Map<String, dynamic> data;
@@ -198,31 +199,40 @@ class VenueScreen extends StatelessWidget {
                                         SizedBox(
                                           width: width * 0.03,
                                         ),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Get Direction',
-                                              style: GoogleFonts.montserrat(
-                                                  fontWeight: FontWeight.w700,
-                                                  fontSize: 12,
-                                                  color: kSecondarytext,
-                                                  letterSpacing:
-                                                      -0.041111111640930176,
-                                                  height: 0),
-                                            ),
-                                            Text(
-                                              data['venueName'],
-                                              style: GoogleFonts.montserrat(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontSize: 12,
-                                                  color: kSecondarytext,
-                                                  letterSpacing:
-                                                      -0.041111111640930176,
-                                                  height: 0),
-                                            ),
-                                          ],
+                                        GestureDetector(
+                                          onTap: () {
+                                            String link =
+                                                data['eventDirections'];
+                                            launchUrl(Uri.parse(link),
+                                                mode: LaunchMode
+                                                    .inAppBrowserView);
+                                          },
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Get Direction',
+                                                style: GoogleFonts.montserrat(
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: 12,
+                                                    color: kSecondarytext,
+                                                    letterSpacing:
+                                                        -0.041111111640930176,
+                                                    height: 0),
+                                              ),
+                                              Text(
+                                                data['venueName'],
+                                                style: GoogleFonts.montserrat(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 12,
+                                                    color: kSecondarytext,
+                                                    letterSpacing:
+                                                        -0.041111111640930176,
+                                                    height: 0),
+                                              ),
+                                            ],
+                                          ),
                                         )
                                       ],
                                     ),

@@ -1,9 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/FirebaseServices/Fetch_Venues.dart';
-import 'package:tejan/Widgets/Event_Card.dart';
 import 'package:tejan/constants.dart';
 
 class MustGoClubs extends StatelessWidget {
