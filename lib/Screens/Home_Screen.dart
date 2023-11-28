@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/FirebaseServices/Fetch_Events.dart';
 import 'package:tejan/FirebaseServices/Fetch_Venues.dart';
 import 'package:tejan/Screens/Category_Screen.dart';
-import 'package:tejan/Screens/Homescreen_Categories.dart';
+import 'package:tejan/Screens/SeeAll_Events.dart';
 import 'package:tejan/Screens/MustGo_Clubs.dart';
 import 'package:tejan/Widgets/Appbar.dart';
 import 'package:tejan/Widgets/Category_Cards.dart';
@@ -109,8 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         MaterialPageRoute(
                                           builder: (context) =>
                                               HomeScreenCategories(
-                                            title: 'Trending Events this Week',
-                                            Category: 'trending',
+                                            title: 'Trending Events',
+                                            Category: 'featuredEvent',
                                           ),
                                         ),
                                       );
@@ -132,7 +132,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height:
                                   264, // Set the desired height of the horizontal list
-                              child: FetchingEvents(),
+                              child: FetchingEvents(
+                                category: 'featuredEvent',
+                                scrollDirection: Axis.horizontal,
+                              ),
                             ),
                             SizedBox(
                               height: height * 0.04,
@@ -228,7 +231,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                                 height:
                                     264, // Set the desired height of the horizontal list
-                                child: FetchingEvents()),
+                                child: FetchingEvents(
+                                  category: 'upcoming',
+                                  scrollDirection: Axis.horizontal,
+                                )),
                             SizedBox(
                               height: height * 0.04,
                             ),
@@ -275,7 +281,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height:
                                   264, // Set the desired height of the horizontal list
-                              child: FetchingEvents(),
+                              child: FetchingEvents(
+                                category: 'nearMe',
+                                scrollDirection: Axis.horizontal,
+                              ),
                             ),
                             SizedBox(
                               height: height * 0.04,

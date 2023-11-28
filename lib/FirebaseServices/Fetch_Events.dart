@@ -5,16 +5,17 @@ import 'package:tejan/Widgets/Event_Card.dart';
 import 'package:tejan/constants.dart';
 
 class FetchingEvents extends StatelessWidget {
-  const FetchingEvents({
-    super.key,
-  });
+  final String category;
+  Axis scrollDirection;
+  FetchingEvents(
+      {super.key, required this.category, required this.scrollDirection});
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance
           .collection('events')
-          .where('featuredEvent', isEqualTo: true)
+          .where(category, isEqualTo: true)
           .snapshots(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -30,7 +31,7 @@ class FetchingEvents extends StatelessWidget {
         if (events.isEmpty) {
           return Center(
             child: Text(
-              'There is no  event',
+              'There is no such event',
               style: GoogleFonts.montserrat(
                 fontWeight: FontWeight.w500,
                 fontSize: 13,
@@ -54,7 +55,7 @@ class FetchingEvents extends StatelessWidget {
         });
 
         return ListView.builder(
-          scrollDirection: Axis.horizontal,
+          scrollDirection: scrollDirection,
           itemCount: events.length,
           itemBuilder: (BuildContext context, int index) {
             var eventData = events[index].data() as Map<String, dynamic>;

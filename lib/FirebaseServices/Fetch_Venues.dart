@@ -24,9 +24,7 @@ class FetchingVenues extends StatelessWidget {
         if (snapshot.hasError) {
           return Center(child: Text('Error: ${snapshot.error}'));
         }
-
         var venues = snapshot.data!.docs;
-
         if (venues.isEmpty) {
           return Center(
             child: Text(

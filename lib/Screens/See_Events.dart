@@ -2,15 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tejan/FirebaseServices/Fetch_Events.dart';
 import 'package:tejan/Widgets/Event_Card.dart';
 import 'package:tejan/constants.dart';
 
-class HomeScreenCategories extends StatelessWidget {
-  final String title;
-  final String Category;
+class SeeEvents extends StatelessWidget {
+  final String venueName;
 
-  HomeScreenCategories(
-      {super.key, required this.Category, required this.title});
+  SeeEvents({super.key, required this.venueName});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +73,7 @@ class HomeScreenCategories extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        title,
+                        venueName,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.w700,
@@ -94,7 +93,7 @@ class HomeScreenCategories extends StatelessWidget {
           body: StreamBuilder<QuerySnapshot>(
             stream: FirebaseFirestore.instance
                 .collection('events')
-                .where(Category, isEqualTo: true)
+                .where('venueName', isEqualTo: venueName)
                 .snapshots(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
@@ -110,7 +109,7 @@ class HomeScreenCategories extends StatelessWidget {
               if (events.isEmpty) {
                 return Center(
                   child: Text(
-                    'No ${title}',
+                    'There is no such event',
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w500,
                       fontSize: 13,

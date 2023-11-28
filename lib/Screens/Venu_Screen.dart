@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tejan/Screens/See_Events.dart';
 import 'package:tejan/Widgets/Main_button.dart';
 import 'package:tejan/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -318,7 +319,14 @@ class VenueScreen extends StatelessWidget {
                             children: [
                               Container(),
                               GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => SeeEvents(
+                                                  venueName: data['venueName'],
+                                                )));
+                                  },
                                   child: MainButton(
                                     buttonText: 'See Events',
                                     buttonColor: kSecondary,
