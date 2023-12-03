@@ -26,10 +26,10 @@ class EventScreen extends StatelessWidget {
                 children: [
                   Container(
                     height: height * 0.46,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(
-                            "assets/pictures/img.png"), // Replace with your image path
+                        image: NetworkImage(data[
+                            'eventImageUrl']), // Replace with your image path
                         fit: BoxFit.cover,
                       ),
                     ),

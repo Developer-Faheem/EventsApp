@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,7 +7,26 @@ import 'package:tejan/Widgets/Main_button.dart';
 import 'package:tejan/constants.dart';
 
 class UserScreenForm extends StatelessWidget {
-  const UserScreenForm({super.key});
+  UserScreenForm({super.key});
+
+  final TextEditingController referralController = TextEditingController();
+
+  void addReferral(String referralString) async {
+    // Get a reference to the Firestore collection
+    CollectionReference referrals =
+        FirebaseFirestore.instance.collection('Referrals');
+
+    try {
+      // Add the string to the collection
+      await referrals.add({
+        'referralData': referralString,
+      });
+
+      //   print('Referral added successfully!');
+    } catch (e) {
+      print('Error adding referral: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +66,7 @@ class UserScreenForm extends StatelessWidget {
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.067),
                   TextField(
+                    controller: referralController,
                     cursorColor: Colors.white,
                     style: GoogleFonts.montserrat(
                       color: Colors.white,
@@ -53,10 +74,20 @@ class UserScreenForm extends StatelessWidget {
                       fontWeight: FontWeight.w700,
                     ),
                     decoration: InputDecoration(
-                      suffixIcon: Transform.scale(
-                        scale: 0.6,
-                        child: SvgPicture.asset(
-                          'assets/svg/arrow-ios-back.svg',
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          addReferral(referralController.text.toString());
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      CustomBottomNavigationBar()));
+                        },
+                        child: Transform.scale(
+                          scale: 0.6,
+                          child: SvgPicture.asset(
+                            'assets/svg/arrow-ios-back.svg',
+                          ),
                         ),
                       ),
                       hintText: 'Example : JayDMTL',

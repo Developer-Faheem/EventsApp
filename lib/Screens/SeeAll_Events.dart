@@ -90,9 +90,14 @@ class HomeScreenCategories extends StatelessWidget {
               ),
             ),
           ),
-          body: FetchingEvents(
-            category: Category,
-            scrollDirection: Axis.vertical,
+          body: Padding(
+            padding: EdgeInsets.only(
+              left: width * 0.056,
+            ),
+            child: FetchingEvents(
+              category: Category,
+              scrollDirection: Axis.vertical,
+            ),
           ),
         ),
       ),
