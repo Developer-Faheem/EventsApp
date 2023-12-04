@@ -29,7 +29,7 @@ class EventScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: NetworkImage(data[
-                            'eventImageUrl']), // Replace with your image path
+                            'mainImageUrl']), // Replace with your image path
                         fit: BoxFit.cover,
                       ),
                     ),

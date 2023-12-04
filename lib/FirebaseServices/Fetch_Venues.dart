@@ -14,7 +14,7 @@ class FetchingVenues extends StatelessWidget {
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance
           .collection('venues')
-          //    .where('featuredEvent', isEqualTo: true)
+          .where('mustGo', isEqualTo: true)
           .snapshots(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -44,8 +44,8 @@ class FetchingVenues extends StatelessWidget {
         venues.sort((a, b) {
           var aData = a.data() as Map<String, dynamic>;
           var bData = b.data() as Map<String, dynamic>;
-          bool aOnFront = aData['topRated'] ?? false;
-          bool bOnFront = bData['topRated'] ?? false;
+          bool aOnFront = aData['mustGo'] ?? false;
+          bool bOnFront = bData['mustGo'] ?? false;
 
           // Sorting logic: true comes first
           return bOnFront ? 1 : -1;

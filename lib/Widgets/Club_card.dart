@@ -91,7 +91,7 @@ class ClubCard extends StatelessWidget {
                               letterSpacing: -0.01,
                               height: 0)),
                       Text(
-                        data['venueCreatedBy'],
+                        data['location'],
                         style: GoogleFonts.montserrat(
                             fontWeight: FontWeight.w500,
                             fontSize: 12,

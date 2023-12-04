@@ -20,21 +20,21 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future _navigateToUserScreen() async {
-    // SharedPreferences prefs = await SharedPreferences.getInstance();
-    // bool isFirstLaunch = prefs.getBool('firstLaunch') ?? true;
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool isFirstLaunch = prefs.getBool('firstLaunch') ?? true;
 
     await Future.delayed(const Duration(milliseconds: 1500), () {});
     Navigator.pushReplacement(context,
         MaterialPageRoute(builder: (context) => CustomBottomNavigationBar()));
 
-    // Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(
-    //         builder: (context)
-    //           => isFirstLaunch
-    //              ? UserScreen()
-    //              :
-    //              CustomBottomNavigationBar()));
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (context)
+              => isFirstLaunch
+                 ? UserScreen()
+                 :
+                 CustomBottomNavigationBar()));
   }
 
   //CustomBottomNavigationBar

@@ -26,7 +26,7 @@ class VenueScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage(data[
-                          'venueImageUrl']), // Replace with your image path
+                          'mainVenueImageUrl']), // Replace with your image path
                       fit: BoxFit.cover,
                     ),
                   ),
