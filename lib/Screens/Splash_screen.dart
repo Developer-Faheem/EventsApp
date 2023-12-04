@@ -24,18 +24,19 @@ class _SplashScreenState extends State<SplashScreen> {
     // bool isFirstLaunch = prefs.getBool('firstLaunch') ?? true;
 
     await Future.delayed(const Duration(milliseconds: 1500), () {});
-
     Navigator.pushReplacement(context,
         MaterialPageRoute(builder: (context) => CustomBottomNavigationBar()));
+
     // Navigator.pushReplacement(
     //     context,
     //     MaterialPageRoute(
     //         builder: (context)
-    //         //  => isFirstLaunch
-    //         //     ? CustomBottomNavigationBar()
-    //         //     :
+    //           => isFirstLaunch
+    //              ? UserScreen()
+    //              :
     //              CustomBottomNavigationBar()));
   }
+
   //CustomBottomNavigationBar
 
   @override

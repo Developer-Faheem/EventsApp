@@ -209,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           builder: (context) =>
                                               HomeScreenCategories(
                                             title: 'Upcoming Events',
-                                            Category: 'upComing',
+                                            Category: 'upcoming',
                                           ),
                                         ),
                                       );

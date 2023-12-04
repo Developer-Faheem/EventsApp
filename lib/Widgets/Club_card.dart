@@ -66,7 +66,7 @@ class ClubCard extends StatelessWidget {
                   Container(
                     width: 32,
                     height: 32,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         shape: BoxShape.circle, color: kCardButton),
                     alignment: Alignment.center,
                     child: Text('#${index + 1}',
@@ -90,15 +90,17 @@ class ClubCard extends StatelessWidget {
                               color: kSecondarytext,
                               letterSpacing: -0.01,
                               height: 0)),
-                      Text(data['venueCreatedBy'],
-                          style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
-                              color: kSecondarytext,
-                              letterSpacing: -0.01,
-                              height: 0)),
+                      Text(
+                        data['venueCreatedBy'],
+                        style: GoogleFonts.montserrat(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                            color: kSecondarytext,
+                            letterSpacing: -0.01,
+                            height: 0),
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             )

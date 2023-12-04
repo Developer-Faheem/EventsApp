@@ -7,6 +7,7 @@ import 'package:tejan/constants.dart';
 class FetchingEvents extends StatelessWidget {
   final String category;
   Axis scrollDirection;
+
   FetchingEvents(
       {super.key, required this.category, required this.scrollDirection});
 

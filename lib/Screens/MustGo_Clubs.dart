@@ -86,8 +86,13 @@ class MustGoClubs extends StatelessWidget {
               ),
             ),
           ),
-          body: FetchingVenues(
-            scrollDirection: Axis.vertical,
+          body: Padding(
+            padding: EdgeInsets.only(
+              left: width * 0.056,
+            ),
+            child: FetchingVenues(
+              scrollDirection: Axis.vertical,
+            ),
           ),
         ),
       ),
