@@ -55,7 +55,7 @@ class VenueScreen extends StatelessWidget {
                   ),
                   child: Center(
                     child: SvgPicture.asset(
-                      'assets/svg/back.svg', // Replace with your SVG file path
+                      'assets/svg/back2.svg', // Replace with your SVG file path
                       width: 24, // Adjust the width of the SVG as needed
                       height: 24, // Adjust the height of the SVG as needed
                     ),

@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount:
-                              9, // Adjust the number of containers as needed
+                              6, // Adjust the number of containers as needed
                           itemBuilder: (BuildContext context, int index) {
                             return GestureDetector(
                               onTap: () {
@@ -303,9 +303,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             SizedBox(
                               height:
-                                  460, // Set the desired height of the horizontal list
+                                  305, // Set the desired height of the horizontal list
                               child: SizedBox(
-                                height: 460, // Adjust the height as needed
+                                height: 305, // Adjust the height as needed
                                 width: MediaQuery.of(context).size.width * 1,
                                 child: GridView.builder(
                                   gridDelegate:
@@ -316,7 +316,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     mainAxisSpacing:
                                         25.0, // Adjust spacing as needed
                                   ),
-                                  itemCount: 9,
+                                  itemCount: 6,
                                   itemBuilder:
                                       (BuildContext context, int index) {
                                     return GestureDetector(

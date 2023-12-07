@@ -12,15 +12,11 @@ class HouseScreen extends StatelessWidget {
   final List<Map<String, String>> categoryList = [
     {
       'url': 'assets/svg/todayHits.svg',
-      'name': 'Today\'s hits',
+      'name': 'Today\'s Hits',
     },
     {
       'url': 'assets/svg/houseCategory.svg',
-      'name': 'House/tech',
-    },
-    {
-      'url': 'assets/svg/edm.svg',
-      'name': 'EDM',
+      'name': 'House/Tech',
     },
     {
       'url': 'assets/svg/afro.svg',
@@ -28,24 +24,34 @@ class HouseScreen extends StatelessWidget {
     },
     {
       'url': 'assets/svg/latin.svg',
-      'name': 'latin',
-    },
-    {
-      'url': 'assets/svg/speakeasy.svg',
-      'name': 'speakeasy',
-    },
-    {
-      'url': 'assets/svg/fancyBars.svg',
-      'name': 'bars',
+      'name': 'Latino',
     },
     {
       'url': 'assets/svg/rap.svg',
-      'name': 'Rap fit',
+      'name': 'Rap FR',
     },
     {
-      'url': 'assets/svg/karoake.svg',
-      'name': 'Karaoke',
+      'url': 'assets/svg/retro.svg',
+      'name': 'Retro',
     },
+
+    // {
+    //   'url': 'assets/svg/edm.svg',
+    //   'name': 'EDM',
+    // },
+    // {
+    //   'url': 'assets/svg/speakeasy.svg',
+    //   'name': 'speakeasy',
+    // },
+    // {
+    //   'url': 'assets/svg/fancyBars.svg',
+    //   'name': 'bars',
+    // },
+
+    // {
+    //   'url': 'assets/svg/karoake.svg',
+    //   'name': 'Karaoke',
+    // },
   ];
 
   @override

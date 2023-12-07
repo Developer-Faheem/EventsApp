@@ -17,33 +17,39 @@ class CategoryCards extends StatelessWidget {
       'name': 'House/Tech',
     },
     {
-      'url': 'assets/svg/edm.svg',
-      'name': 'EDM',
-    },
-    {
       'url': 'assets/svg/afro.svg',
       'name': 'Afro',
     },
     {
       'url': 'assets/svg/latin.svg',
-      'name': 'Latin',
-    },
-    {
-      'url': 'assets/svg/speakeasy.svg',
-      'name': 'Speakeasy',
-    },
-    {
-      'url': 'assets/svg/fancyBars.svg',
-      'name': 'Bars',
+      'name': 'Latino',
     },
     {
       'url': 'assets/svg/rap.svg',
       'name': 'Rap FR',
     },
     {
-      'url': 'assets/svg/karoake.svg',
-      'name': 'Karaoke',
+      'url': 'assets/svg/retro.svg',
+      'name': 'Retro',
     },
+
+    // {
+    //   'url': 'assets/svg/edm.svg',
+    //   'name': 'EDM',
+    // },
+    // {
+    //   'url': 'assets/svg/speakeasy.svg',
+    //   'name': 'speakeasy',
+    // },
+    // {
+    //   'url': 'assets/svg/fancyBars.svg',
+    //   'name': 'bars',
+    // },
+
+    // {
+    //   'url': 'assets/svg/karoake.svg',
+    //   'name': 'Karaoke',
+    // },
   ];
 
   @override
