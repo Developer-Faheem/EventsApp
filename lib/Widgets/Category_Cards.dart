@@ -5,52 +5,8 @@ import 'package:tejan/constants.dart';
 
 class CategoryCards extends StatelessWidget {
   final int index;
-  CategoryCards({required this.index});
-
-  final List<Map<String, String>> categoryList = [
-    {
-      'url': 'assets/svg/todayHits.svg',
-      'name': 'Today\'s Hits',
-    },
-    {
-      'url': 'assets/svg/houseCategory.svg',
-      'name': 'House/Tech',
-    },
-    {
-      'url': 'assets/svg/afro.svg',
-      'name': 'Afro',
-    },
-    {
-      'url': 'assets/svg/latin.svg',
-      'name': 'Latino',
-    },
-    {
-      'url': 'assets/svg/rap.svg',
-      'name': 'Rap FR',
-    },
-    {
-      'url': 'assets/svg/retro.svg',
-      'name': 'Retro',
-    },
-
-    // {
-    //   'url': 'assets/svg/edm.svg',
-    //   'name': 'EDM',
-    // },
-    // {
-    //   'url': 'assets/svg/speakeasy.svg',
-    //   'name': 'speakeasy',
-    // },
-    // {
-    //   'url': 'assets/svg/fancyBars.svg',
-    //   'name': 'bars',
-    // },
-
-    // {
-    //   'url': 'assets/svg/karoake.svg',
-    //   'name': 'Karaoke',
-    // },
-  ];
+  List categoryList;
+  CategoryCards({required this.index, required this.categoryList});
 
   @override
   Widget build(BuildContext context) {

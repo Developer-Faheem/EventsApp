@@ -2,57 +2,41 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tejan/Widgets/Club_card.dart';
 import 'package:tejan/Widgets/Event_Card.dart';
 import 'package:tejan/constants.dart';
 
-class HouseScreen extends StatelessWidget {
+class vanueCategories extends StatelessWidget {
   final int index;
-  HouseScreen({super.key, required this.index});
+  final List categoryList;
+  vanueCategories({super.key, required this.index, required this.categoryList});
 
-  final List<Map<String, String>> categoryList = [
-    {
-      'url': 'assets/svg/todayHits.svg',
-      'name': 'Today\'s Hits',
-    },
-    {
-      'url': 'assets/svg/houseCategory.svg',
-      'name': 'House/Tech',
-    },
-    {
-      'url': 'assets/svg/afro.svg',
-      'name': 'Afro',
-    },
-    {
-      'url': 'assets/svg/latin.svg',
-      'name': 'Latino',
-    },
-    {
-      'url': 'assets/svg/rap.svg',
-      'name': 'Rap FR',
-    },
-    {
-      'url': 'assets/svg/retro.svg',
-      'name': 'Retro',
-    },
-
-    // {
-    //   'url': 'assets/svg/edm.svg',
-    //   'name': 'EDM',
-    // },
-    // {
-    //   'url': 'assets/svg/speakeasy.svg',
-    //   'name': 'speakeasy',
-    // },
-    // {
-    //   'url': 'assets/svg/fancyBars.svg',
-    //   'name': 'bars',
-    // },
-
-    // {
-    //   'url': 'assets/svg/karoake.svg',
-    //   'name': 'Karaoke',
-    // },
-  ];
+  // final List<Map<String, String>> categoryList = [
+  //   {
+  //     'url': 'assets/svg/todayHits.svg',
+  //     'name': 'Today\'s Hits',
+  //   },
+  //   {
+  //     'url': 'assets/svg/houseCategory.svg',
+  //     'name': 'House/Tech',
+  //   },
+  //   {
+  //     'url': 'assets/svg/afro.svg',
+  //     'name': 'Afro',
+  //   },
+  //   {
+  //     'url': 'assets/svg/latin.svg',
+  //     'name': 'Latino',
+  //   },
+  //   {
+  //     'url': 'assets/svg/rap.svg',
+  //     'name': 'Rap FR',
+  //   },
+  //   {
+  //     'url': 'assets/svg/retro.svg',
+  //     'name': 'Retro',
+  //   },
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -137,8 +121,8 @@ class HouseScreen extends StatelessWidget {
           ),
           body: StreamBuilder<QuerySnapshot>(
             stream: FirebaseFirestore.instance
-                .collection('events')
-                .where('eventCategory', isEqualTo: selectedCategory)
+                .collection('venues')
+                .where('venueCategories', arrayContains: selectedCategory)
                 .snapshots(),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
@@ -150,11 +134,11 @@ class HouseScreen extends StatelessWidget {
               }
               // If the data has been loaded successfully
               var events = snapshot.data!.docs;
-
+              print(selectedCategory);
               if (events.isEmpty) {
                 return Center(
                   child: Text(
-                    'There is no such event',
+                    'There is no such venue',
                     style: GoogleFonts.montserrat(
                       fontWeight: FontWeight.w500,
                       fontSize: 13,
@@ -176,7 +160,10 @@ class HouseScreen extends StatelessWidget {
                         events[index].data() as Map<String, dynamic>;
 
                     // Pass eventData to your EventCard widget
-                    return EventCard(data: eventData);
+                    return ClubCard(
+                      data: eventData,
+                      index: index,
+                    );
                   },
                 ),
               );

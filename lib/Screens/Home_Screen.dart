@@ -2,21 +2,76 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/FirebaseServices/Fetch_Events.dart';
 import 'package:tejan/FirebaseServices/Fetch_Venues.dart';
-import 'package:tejan/Screens/Category_Screen.dart';
+import 'package:tejan/Screens/Event_Category_Screen.dart';
 import 'package:tejan/Screens/SeeAll_Events.dart';
 import 'package:tejan/Screens/MustGo_Clubs.dart';
+import 'package:tejan/Screens/Venue_Category_Screen.dart';
 import 'package:tejan/Widgets/Appbar.dart';
 import 'package:tejan/Widgets/Category_Cards.dart';
 import 'package:tejan/constants.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<Map<String, String>> eventCategoryList = [
+    {
+      'url': 'assets/svg/todayHits.svg',
+      'name': 'Today\'s Hits',
+    },
+    {
+      'url': 'assets/svg/houseCategory.svg',
+      'name': 'House/Tech',
+    },
+    {
+      'url': 'assets/svg/afro.svg',
+      'name': 'Afro',
+    },
+    {
+      'url': 'assets/svg/latin.svg',
+      'name': 'Latino',
+    },
+    {
+      'url': 'assets/svg/rap.svg',
+      'name': 'Rap FR',
+    },
+    {
+      'url': 'assets/svg/retro.svg',
+      'name': 'Retro',
+    },
+  ];
+
+  final List<Map<String, String>> venueCategoryList = [
+    {
+      'url': 'assets/svg/fancyBars.svg',
+      'name': 'Fancy Bars',
+    },
+    {
+      'url': 'assets/svg/bars2.svg',
+      'name': 'Bars',
+    },
+    {
+      'url': 'assets/svg/shisha.svg',
+      'name': 'Shisha lounge',
+    },
+    {
+      'url': 'assets/svg/speakeasy.svg',
+      'name': 'Speakeasy',
+    },
+    {
+      'url': 'assets/svg/clubs.svg',
+      'name': 'Clubs',
+    },
+    {
+      'url': 'assets/svg/karoake.svg',
+      'name': 'Karaoke',
+    },
+  ];
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -72,11 +127,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          HouseScreen(index: index)),
+                                      builder: (context) => HouseScreen(
+                                            index: index,
+                                            categoryList: eventCategoryList,
+                                          )),
                                 );
                               },
-                              child: CategoryCards(index: index),
+                              child: CategoryCards(
+                                index: index,
+                                categoryList: eventCategoryList,
+                              ),
                             );
                           }),
                     ),
@@ -188,6 +248,62 @@ class _HomeScreenState extends State<HomeScreen> {
                             SizedBox(
                               height: height * 0.04,
                             ),
+                            Text(
+                              'Browse Venue by Category',
+                              style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 15,
+                                  color: kSecondary,
+                                  letterSpacing: -0.01,
+                                  height: 0),
+                            ),
+                            SizedBox(
+                              height: height * 0.025,
+                            ),
+                            SizedBox(
+                              height:
+                                  305, // Set the desired height of the horizontal list
+                              child: SizedBox(
+                                height: 305, // Adjust the height as needed
+                                width: MediaQuery.of(context).size.width * 1,
+                                child: GridView.builder(
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 3,
+                                    // crossAxisSpacing:
+                                    //     8.0, // Adjust spacing as needed
+                                    mainAxisSpacing:
+                                        25.0, // Adjust spacing as needed
+                                  ),
+                                  itemCount: 6,
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    return GestureDetector(
+                                      onTap: () {
+                                        //     String selectedCategory = getCategoryName(index);
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                vanueCategories(
+                                              index: index,
+                                              categoryList: venueCategoryList,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      child: CategoryCards(
+                                        index: index,
+                                        categoryList: venueCategoryList,
+                                      ),
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: height * 0.015,
+                            ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -290,7 +406,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: height * 0.04,
                             ),
                             Text(
-                              'Browse by Category',
+                              'Browse Event by Category',
                               style: GoogleFonts.montserrat(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 15,
@@ -325,12 +441,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) =>
-                                                HouseScreen(index: index),
+                                            builder: (context) => HouseScreen(
+                                              index: index,
+                                              categoryList: eventCategoryList,
+                                            ),
                                           ),
                                         );
                                       },
-                                      child: CategoryCards(index: index),
+                                      child: CategoryCards(
+                                        index: index,
+                                        categoryList: eventCategoryList,
+                                      ),
                                     );
                                   },
                                 ),
