@@ -38,7 +38,7 @@ class UserScreenForm extends StatelessWidget {
           backgroundColor: kPrimary,
           body: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.only(left: 47, top: 52, right: 37),
+              padding: const EdgeInsets.only(left: 47, top: 52, right: 47),
               child: Column(
                 children: [
                   Row(
@@ -104,6 +104,7 @@ class UserScreenForm extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.3,
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
                           onTap: () {

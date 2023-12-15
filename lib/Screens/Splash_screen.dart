@@ -30,11 +30,8 @@ class _SplashScreenState extends State<SplashScreen> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (context)
-              => isFirstLaunch
-                 ? UserScreen()
-                 :
-                 CustomBottomNavigationBar()));
+            builder: (context) =>
+                isFirstLaunch ? UserScreen() : CustomBottomNavigationBar()));
   }
 
   //CustomBottomNavigationBar

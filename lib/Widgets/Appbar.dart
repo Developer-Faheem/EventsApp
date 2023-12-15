@@ -3,23 +3,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tejan/constants.dart';
 
-
 class AppBarContent extends StatelessWidget {
   const AppBarContent({
     super.key,
   });
 
-
-
   @override
   Widget build(BuildContext context) {
-
-    
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
     return Column(
-      //  mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,9 +55,8 @@ class AppBarContent extends StatelessWidget {
         SizedBox(
           height: height * 0.06,
         ),
-       
         Padding(
-          padding:  EdgeInsets.only(left:width*0.065),
+          padding: EdgeInsets.only(left: width * 0.065),
           child: Container(
             height: 27,
             decoration: const BoxDecoration(
@@ -91,15 +84,13 @@ class AppBarContent extends StatelessWidget {
                   ),
                   focusedBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(
-                        color: Colors
-                            .transparent
-                          ), // Transparent border for focus
+                        color:
+                            Colors.transparent), // Transparent border for focus
                   ),
                   enabledBorder: const UnderlineInputBorder(
                     borderSide: BorderSide(
                         color: Colors
-                            .transparent
-                            ), // Transparent border for enabled
+                            .transparent), // Transparent border for enabled
                   ),
                 ),
               ),

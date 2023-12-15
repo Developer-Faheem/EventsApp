@@ -6,7 +6,8 @@ import 'package:tejan/constants.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   @override
-  _CustomBottomNavigationBarState createState() => _CustomBottomNavigationBarState();
+  _CustomBottomNavigationBarState createState() =>
+      _CustomBottomNavigationBarState();
 }
 
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
@@ -25,31 +26,29 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       body: _currentIndex == 0 ? HomeScreen() : SearchScreen(),
       bottomNavigationBar: Container(
         width: 390,
-        height: 76,
+        height: 86,
         child: BottomNavigationBar(
-           backgroundColor: kAppBottomNavbar,
+          backgroundColor: kAppBottomNavbar,
           currentIndex: _currentIndex,
           onTap: _onTabTapped,
-          items:  [
+          items: [
             BottomNavigationBarItem(
-             
               icon: SizedBox(
                 child: SvgPicture.asset(
-                      
-                            'assets/svg/hameIcon.svg',
-                            width: 31,
-                            height: 31,
-                          ),
+                  'assets/svg/hameIcon.svg',
+                  width: 30,
+                  height: 30,
+                ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon:  SizedBox(
+              icon: SizedBox(
                 child: SvgPicture.asset(
-                            'assets/svg/searchIcon.svg',
-                              width: 31,
-                            height: 31,
-                          ),
+                  'assets/svg/searchIcon.svg',
+                  width: 31,
+                  height: 31,
+                ),
               ),
               label: '',
             ),
@@ -58,15 +57,13 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: SizedBox(
-      //  margin: EdgeInsets.only(bottom: -0.3),
+        //  margin: EdgeInsets.only(bottom: -0.3),
         child: SvgPicture.asset(
           'assets/svg/Union.svg', // Replace with your image path
           height: 54,
-            width: 56,
+          width: 56,
         ),
       ),
     );
   }
 }
-
-

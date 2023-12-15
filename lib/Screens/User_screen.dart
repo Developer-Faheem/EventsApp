@@ -33,7 +33,7 @@ class _UserScreenState extends State<UserScreen> {
           resizeToAvoidBottomInset: false,
           backgroundColor: kPrimary,
           body: Padding(
-            padding: const EdgeInsets.only(left: 47, top: 52),
+            padding: const EdgeInsets.only(left: 47, right: 47, top: 52),
             child: Column(
               children: [
                 Row(
@@ -66,6 +66,7 @@ class _UserScreenState extends State<UserScreen> {
                   height: MediaQuery.of(context).size.height * 0.5,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
                         onTap: () {

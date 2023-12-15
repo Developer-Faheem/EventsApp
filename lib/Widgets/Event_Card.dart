@@ -74,6 +74,7 @@ class EventCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
@@ -94,9 +95,9 @@ class EventCard extends StatelessWidget {
                                   letterSpacing: -0.01,
                                   height: 0),
                             ),
-                            const SizedBox(
-                              width: 21,
-                            ),
+                            // const SizedBox(
+                            //   width: 21,
+                            // ),
                           ],
                         ),
                         const SizedBox(

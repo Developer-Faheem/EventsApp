@@ -24,8 +24,6 @@ class CategoryCards extends StatelessWidget {
           ),
           SvgPicture.asset(
             categoryList[index]['url'].toString(),
-            // width: 72, // Specify the desired width
-            // height: 69.57, // Specify the desired height
           ),
           Container(
             decoration: BoxDecoration(

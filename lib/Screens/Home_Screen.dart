@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'name': 'Latino',
     },
     {
-      'url': 'assets/svg/rap.svg',
+      'url': 'assets/svg/rapFR.svg',
       'name': 'Rap FR',
     },
     {
@@ -89,9 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
               scrollDirection: Axis.vertical,
               child: Stack(
                 children: [
-                  // Container(
-                  //   color: kPrimary,
-                  // ),
                   Container(
                     height: height * 0.31,
                     width: double.infinity,
