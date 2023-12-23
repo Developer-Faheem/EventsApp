@@ -10,33 +10,6 @@ class HouseScreen extends StatelessWidget {
   List categoryList;
   HouseScreen({super.key, required this.index, required this.categoryList});
 
-  // final List<Map<String, String>> categoryList = [
-  //   {
-  //     'url': 'assets/svg/todayHits.svg',
-  //     'name': 'Today\'s Hits',
-  //   },
-  //   {
-  //     'url': 'assets/svg/houseCategory.svg',
-  //     'name': 'House/Tech',
-  //   },
-  //   {
-  //     'url': 'assets/svg/afro.svg',
-  //     'name': 'Afro',
-  //   },
-  //   {
-  //     'url': 'assets/svg/latin.svg',
-  //     'name': 'Latino',
-  //   },
-  //   {
-  //     'url': 'assets/svg/rap.svg',
-  //     'name': 'Rap FR',
-  //   },
-  //   {
-  //     'url': 'assets/svg/retro.svg',
-  //     'name': 'Retro',
-  //   },
-  // ];
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

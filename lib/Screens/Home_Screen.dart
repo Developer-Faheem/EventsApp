@@ -264,6 +264,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 305, // Adjust the height as needed
                                 width: MediaQuery.of(context).size.width * 1,
                                 child: GridView.builder(
+                                  physics: const NeverScrollableScrollPhysics(),
                                   gridDelegate:
                                       const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 3,
@@ -415,43 +416,39 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: height * 0.025,
                             ),
                             SizedBox(
-                              height:
-                                  305, // Set the desired height of the horizontal list
-                              child: SizedBox(
-                                height: 305, // Adjust the height as needed
-                                width: MediaQuery.of(context).size.width * 1,
-                                child: GridView.builder(
-                                  gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 3,
-                                    // crossAxisSpacing:
-                                    //     8.0, // Adjust spacing as needed
-                                    mainAxisSpacing:
-                                        25.0, // Adjust spacing as needed
-                                  ),
-                                  itemCount: 6,
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return GestureDetector(
-                                      onTap: () {
-                                        //     String selectedCategory = getCategoryName(index);
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => HouseScreen(
-                                              index: index,
-                                              categoryList: eventCategoryList,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                      child: CategoryCards(
-                                        index: index,
-                                        categoryList: eventCategoryList,
-                                      ),
-                                    );
-                                  },
+                              height: 305, // Adjust the height as needed
+                              width: MediaQuery.of(context).size.width * 1,
+                              child: GridView.builder(
+                                physics: const NeverScrollableScrollPhysics(),
+                                gridDelegate:
+                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 3,
+                                  // crossAxisSpacing:
+                                  //     8.0, // Adjust spacing as needed
+                                  mainAxisSpacing:
+                                      25.0, // Adjust spacing as needed
                                 ),
+                                itemCount: 6,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return GestureDetector(
+                                    onTap: () {
+                                      //     String selectedCategory = getCategoryName(index);
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => HouseScreen(
+                                            index: index,
+                                            categoryList: eventCategoryList,
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: CategoryCards(
+                                      index: index,
+                                      categoryList: eventCategoryList,
+                                    ),
+                                  );
+                                },
                               ),
                             ),
                             SizedBox(

@@ -57,7 +57,7 @@ class UserScreenForm extends StatelessWidget {
                         'Do you have\na referral\ncode ?',
                         style: GoogleFonts.montserrat(
                             fontWeight: FontWeight.w700,
-                            fontSize: 45,
+                            fontSize: MediaQuery.of(context).size.width * 0.112,
                             color: kPrimarytext,
                             letterSpacing: -0.041111111640930176,
                             height: 0),
@@ -106,18 +106,34 @@ class UserScreenForm extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      GestureDetector(
-                          onTap: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        CustomBottomNavigationBar()));
-                          },
-                          child: MainButton(
-                            buttonText: 'Skip',
-                            buttonColor: kSecondary,
-                          ))
+                      referralController.text == ""
+                          ? GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            CustomBottomNavigationBar()));
+                              },
+                              child: MainButton(
+                                buttonText: 'Skip',
+                                buttonColor: kSecondary,
+                              ),
+                            )
+                          : GestureDetector(
+                              onTap: () {
+                                addReferral(referralController.text.toString());
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            CustomBottomNavigationBar()));
+                              },
+                              child: MainButton(
+                                buttonText: 'Next',
+                                buttonColor: kSecondary,
+                              ),
+                            )
                     ],
                   )
                 ],

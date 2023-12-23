@@ -55,7 +55,7 @@ class _UserScreenState extends State<UserScreen> {
                       'Events for\nEveryone',
                       style: GoogleFonts.montserrat(
                           fontWeight: FontWeight.w700,
-                          fontSize: 45,
+                          fontSize: MediaQuery.of(context).size.width * 0.112,
                           color: kPrimarytext,
                           letterSpacing: -0.041111111640930176,
                           height: 0),

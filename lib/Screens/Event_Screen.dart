@@ -104,8 +104,9 @@ class EventScreen extends StatelessWidget {
                                 width: width * 0.03,
                               ),
                               Container(
-                                width: 316,
-                                height: 131,
+                                width: MediaQuery.of(context).size.width *
+                                    0.85, // 85% of the screen width
+                                height: 131, // 20% of the screen height
                                 decoration: BoxDecoration(
                                   //   color: Colors.transparent, // You can set a background color here if needed
                                   borderRadius: BorderRadius.circular(20),
@@ -331,12 +332,12 @@ class EventScreen extends StatelessWidget {
                                                   LaunchMode.inAppBrowserView);
                                         },
                                         child: MainButton(
-                                          buttonText: 'Join Guesslist',
+                                          buttonText: 'Join Guestlist',
                                           buttonColor: kSecondary,
                                         ),
                                       )
                                     : MainButton(
-                                        buttonText: 'Guesslist is full ;(',
+                                        buttonText: 'Guestlist is full ;(',
                                         buttonColor: Color(0xff8E8E8E),
                                       ),
                                 Text(

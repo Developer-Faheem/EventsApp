@@ -16,7 +16,7 @@ class MainButton extends StatelessWidget {
         color: buttonColor,
         borderRadius: BorderRadius.circular(15),
       ),
-      width: 288,
+      width: MediaQuery.of(context).size.width * 0.72,
       height: 55,
       child: Center(
         child: Text(
