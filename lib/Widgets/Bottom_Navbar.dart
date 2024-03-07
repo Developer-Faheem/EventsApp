@@ -25,43 +25,52 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       resizeToAvoidBottomInset: false,
       body: _currentIndex == 0 ? HomeScreen() : SearchScreen(),
       bottomNavigationBar: Container(
-        width: 390,
-        height: 86,
-        child: BottomNavigationBar(
-          backgroundColor: kAppBottomNavbar,
-          currentIndex: _currentIndex,
-          onTap: _onTabTapped,
-          items: [
-            BottomNavigationBarItem(
-              icon: SizedBox(
-                child: SvgPicture.asset(
-                  'assets/svg/hameIcon.svg',
-                  width: 30,
-                  height: 30,
-                ),
-              ),
-              label: '',
+        height: MediaQuery.of(context).size.height * 0.085,
+        decoration: BoxDecoration(
+          color: kAppBottomNavbar,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black12,
+              offset: Offset(0, -3),
+              blurRadius: 6,
             ),
-            BottomNavigationBarItem(
-              icon: SizedBox(
-                child: SvgPicture.asset(
-                  'assets/svg/searchIcon.svg',
-                  width: 31,
-                  height: 31,
-                ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            InkWell(
+              onTap: () => _onTabTapped(0),
+              child: SvgPicture.asset(
+                'assets/svg/hameIcon.svg',
+                // width: 30,
+                // height: 30,
               ),
-              label: '',
+            ),
+            InkWell(
+              onTap: () => _onTabTapped(1),
+              child: SvgPicture.asset(
+                'assets/svg/searchIcon.svg',
+                // width: 31,
+                // height: 31,
+              ),
             ),
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: SizedBox(
-        //  margin: EdgeInsets.only(bottom: -0.3),
-        child: SvgPicture.asset(
-          'assets/svg/Union.svg', // Replace with your image path
-          height: 54,
-          width: 56,
+      floatingActionButton: InkWell(
+        onTap: () {
+          // Add your floating action button logic here
+        },
+        child: Container(
+          // width: 34,
+          // height: 45,
+          child: SvgPicture.asset(
+            'assets/svg/Union.svg',
+            height: 62,
+            width: 63,
+          ),
         ),
       ),
     );
